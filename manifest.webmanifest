@@ -1,6 +1,7 @@
+
 {
   "id": "./",
-  "short_name": "SpeakEase",
+  "name": "SpeakEase",
   "short_name": "SpeakEase",
   "description": "An accessible, context-aware phrase board with speech output.",
   "start_url": "./",
@@ -11,7 +12,23 @@
   "theme_color": "#123c35",
   "categories": ["accessibility", "utilities"],
   "icons": [
-    {"src":"./icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any"},
-    {"src":"./icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any"}
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
   ]
 }
