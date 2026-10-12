@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#123c35">
+  <meta name="description" content="A simple, accessible communication board that speaks your selected phrases.">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/icon-192.png">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+  <link rel="stylesheet" href="./styles.css">
+  <title>SpeakEase — Communicate with confidence</title>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark" aria-hidden="true">◉</div>
+
+    <div class="brand-copy">
+      <div class="brand">SpeakEase</div>
+      <div class="tagline">Your voice, one tap away</div>
+    </div>
+
+    <label class="language-picker" for="languageSelect">
+      <span>🌐 Language</span>
+      <select id="languageSelect" aria-label="Choose language">
+        <option value="en">English</option>
+        <option value="ta">தமிழ் (Tamil)</option>
+        <option value="te">తెలుగు (Telugu)</option>
+        <option value="hi">हिन्दी (Hindi)</option>
+        <option value="ml">മലയാളം (Malayalam)</option>
+        <option value="kn">ಕನ್ನಡ (Kannada)</option>
+      </select>
+    </label>
+
+    <button id="installBtn" class="install-btn" hidden>＋ Install</button>
+  </header>
+
+  <main class="app-shell">
+    <section class="welcome">
+      <div>
+        <p class="eyebrow">QUICK COMMUNICATION</p>
+        <h1>What would you<br class="desktop-break"> like to say?</h1>
+        <p class="subtext">Choose a phrase and your device will say it aloud.</p>
+      </div>
+      <div class="sound-orb" aria-hidden="true">◖))</div>
+    </section>
+
+    <section class="context-section" aria-labelledby="contextTitle">
+      <div class="section-heading">
+        <h2 id="contextTitle">Choose your context</h2>
+        <span class="hint">Change anytime</span>
+      </div>
+      <div class="contexts" role="group" aria-label="Communication context">
+        <button class="context active" data-context="home"><span>⌂</span><b>Home</b></button>
+        <button class="context" data-context="classroom"><span>▤</span><b>Classroom</b></button>
+        <button class="context" data-context="hospital"><span>✚</span><b>Hospital</b></button>
+        <button class="context" data-context="transport"><span>↗</span><b>Transport</b></button>
+      </div>
+    </section>
+
+    <section class="phrases-section" aria-labelledby="phrasesTitle">
+      <div class="section-heading">
+        <h2 id="phrasesTitle">Tap to speak</h2>
+        <span id="phraseCount" class="hint"></span>
+      </div>
+      <div id="phraseGrid" class="phrase-grid"></div>
+    </section>
+
+    <section class="custom-section">
+      <div class="section-heading">
+        <div>
+          <h2>Your own phrases</h2>
+          <p class="section-desc">Save the words you use most.</p>
+        </div>
+      </div>
+      <form id="phraseForm" class="phrase-form">
+        <label class="sr-only" for="customPhrase">Type your personal phrase</label>
+        <input id="customPhrase" maxlength="120" placeholder="e.g. Please call my daughter" autocomplete="off" required>
+        <button type="submit">＋ Add</button>
+      </form>
+      <div id="customGrid" class="custom-grid"></div>
+    </section>
+
+    <section class="settings">
+      <label for="voiceSelect">Speech voice</label>
+      <select id="voiceSelect" aria-label="Speech voice">
+        <option value="">Device default</option>
+      </select>
+      <div class="speech-controls">
+        <button id="repeatBtn" class="secondary-btn" disabled>↻ Repeat last phrase</button>
+        <button id="stopBtn" class="secondary-btn stop-btn">■ Stop speech</button>
+      </div>
+      <p id="status" class="status" role="status" aria-live="polite">Ready when you are.</p>
+    </section>
+
+    <footer>
+      <span>Designed for simple, everyday communication.</span>
+      <span class="offline"><i></i> Offline-ready after first visit</span>
+    </footer>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  
+  <script src="./vendor/ort.min.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
